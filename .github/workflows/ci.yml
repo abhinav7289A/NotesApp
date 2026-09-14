@@ -1,0 +1,47 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r backend/requirements.txt -r backend/requirements-dev.txt
+      - run: ruff check backend/
+      - run: mypy backend/app
+      - run: pytest backend/tests -q
+
+  mobile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - run: flutter pub get
+        working-directory: mobile
+      - run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: mobile
+      - run: dart analyze
+        working-directory: mobile
+      - run: flutter test
+        working-directory: mobile
+
+  contract-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r backend/requirements.txt
+      - run: ./backend/scripts/gen_contract.sh
+      - name: fail if contract drifted
+        run: |
+          if ! git diff --exit-code contracts/openapi.json; then
+            echo "::error::openapi.json is stale. Run gen_contract.sh and commit."
+            exit 1
+          fi
