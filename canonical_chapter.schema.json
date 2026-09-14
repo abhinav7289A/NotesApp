@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://notesapp.dev/contracts/canonical_chapter.schema.json",
+  "title": "CanonicalChapter",
+  "description": "FROZEN IN P0. The single source of truth shared by backend and mobile. Any change requires review by both devs and an entry in contracts/CHANGELOG.md.",
+  "type": "object",
+  "required": ["schema_version", "chapter_id", "content_hash", "title", "language", "page_count", "pages", "blocks"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Bump only on a breaking change. Clients must reject versions they do not know."
+    },
+    "chapter_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "sha256 of the raw source PDF bytes. The cache key for every generated artifact."
+    },
+    "title": { "type": "string" },
+    "source_filename": { "type": "string" },
+    "language": {
+      "type": "string",
+      "description": "BCP-47. 'en', 'hi', 'pa'. Detected, may be overridden by the user."
+    },
+    "page_count": { "type": "integer", "minimum": 1 },
+    "ocr_engine": { "type": "string", "description": "e.g. 'surya-0.6' or 'pdf-text-layer'" },
+    "created_at": { "type": "string", "format": "date-time" },
+
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page_id", "index", "width_pt", "height_pt"],
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "type": "string",
+            "pattern": "^p[0-9]{5}$",
+            "description": "p00001, p00002. Zero-padded to 5, stable forever."
+          },
+          "index": { "type": "integer", "minimum": 0 },
+          "width_pt": { "type": "number" },
+          "height_pt": { "type": "number" },
+          "rotation": { "type": "integer", "enum": [0, 90, 180, 270], "default": 0 },
+          "image_key": {
+            "type": ["string", "null"],
+            "description": "R2 object key for the rasterized page. Null until rendered."
+          },
+          "has_text_layer": { "type": "boolean" }
+        }
+      }
+    },
+
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["block_id", "page_id", "type", "bbox", "order"],
+        "additionalProperties": false,
+        "properties": {
+          "block_id": {
+            "type": "string",
+            "pattern": "^p[0-9]{5}_b[0-9]{3}$",
+            "description": "p00012_b004. Page id, underscore, b, zero-padded index within the page. Stable forever — every annotation, note and cache entry anchors to this."
+          },
+          "page_id": { "type": "string", "pattern": "^p[0-9]{5}$" },
+          "type": {
+            "type": "string",
+            "enum": ["heading", "paragraph", "list_item", "figure", "caption", "table", "formula", "header", "footer", "page_number"]
+          },
+          "text": {
+            "type": ["string", "null"],
+            "description": "Null for figure blocks."
+          },
+          "bbox": {
+            "type": "array",
+            "items": { "type": "number", "minimum": 0, "maximum": 1 },
+            "minItems": 4,
+            "maxItems": 4,
+            "description": "[x0, y0, x1, y1] normalized 0..1 against page width/height. Origin top-left. NEVER store absolute points — the client renders at arbitrary zoom."
+          },
+          "order": {
+            "type": "integer",
+            "description": "Reading order within the chapter, not within the page. Monotonic across the whole document."
+          },
+          "level": {
+            "type": ["integer", "null"],
+            "description": "Heading depth 1..6. Null for non-headings."
+          },
+          "confidence": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1,
+            "description": "OCR confidence. Null when read from an embedded text layer."
+          },
+          "image_key": {
+            "type": ["string", "null"],
+            "description": "R2 key for a cropped figure. Set only on figure and table blocks."
+          }
+        }
+      }
+    }
+  }
+}
