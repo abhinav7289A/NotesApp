@@ -1,0 +1,10 @@
+.env
+*.env.local
+__pycache__/
+.venv/
+.mypy_cache/
+.pytest_cache/
+mobile/.dart_tool/
+mobile/build/
+mobile/.flutter-plugins*
+protection.json
