@@ -3,7 +3,7 @@
 OWNER: Dev A
 DURATION: 2 weeks
 STATUS: in progress
-READ FIRST: `/CLAUDE.md`, `/contracts/canonical_chapter.schema.json`, `/COLLABORATION.md`, `/design/demo.html`
+READ FIRST: `/CLAUDE.md`, `/contracts/canonical_chapter.schema.json`, `/COLLABORATION.md`, `/design_handoff_marginalia/README.md`
 
 ---
 
