@@ -1,5 +1,22 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+/// Fixed, non-themed — the design specifies this literal for the amber
+/// "Ask" button's text regardless of light/dark mode, unlike every other
+/// color in the app.
+const Color kAskButtonInk = Color(0xFF1A1206);
+
+/// Fixed, non-themed placeholder colors for Upload's error-state "bad scan"
+/// vs "good example" comparison thumbnails — the design uses fixed literals
+/// here too, since these represent actual scanned-page imagery, not chrome.
+const Color kBadScanBg = Color(0xFF2A2E36);
+const Color kGoodScanBg = Color(0xFFF3F1EC);
+
+/// Convenience for screens that just need the resolved tokens for the
+/// current brightness — see [AppColors.of].
+extension AppColorsContext on BuildContext {
+  AppColors get appColors => AppColors.of(this);
+}
 
 /// Design tokens transcribed verbatim from `P1-mobile-CLAUDE.md` /
 /// `design_handoff_marginalia/README.md`. Colour is semantic, not
@@ -34,6 +51,14 @@ class AppColors {
   final Color selectionFill;
   final Color bar;
   final Color barInk;
+
+  /// Resolves the correct light/dark instance for [context]'s current
+  /// brightness. `MaterialApp` (`app.dart`) already resolves `themeMode` +
+  /// `theme`/`darkTheme` into `Theme.of(context).brightness`, so this is the
+  /// single source of truth every screen should read from rather than each
+  /// hardcoding `AppColors.light` or re-deriving brightness independently.
+  static AppColors of(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark ? AppColors.dark : AppColors.light;
 
   static const light = AppColors(
     page: Color(0xFFFFFFFF),
@@ -92,6 +117,20 @@ class AppRadii {
   static const double sheetTop = 18;
   /// Note blocks, document pages, figures and tables are square — radius 0.
   static const double paper = 0;
+  /// The library's per-document notes-count chip. Deliberately distinct
+  /// from [keyboardKey] (5) even though they're close in value — different
+  /// affordances that happen to be similar sizes shouldn't be coupled.
+  static const double countChip = 3;
+}
+
+/// Interactive control heights. The design uses 44/48/52/56px across the
+/// three P1 screens; every primary/secondary button and chrome bar should
+/// reference one of these rather than a raw literal.
+class AppControlHeight {
+  static const double barButton = 44;
+  static const double primaryButton = 48;
+  static const double pickButton = 52;
+  static const double chromeBar = 56;
 }
 
 /// Plex Mono is reserved for provenance — page references, page numbers,
@@ -112,8 +151,8 @@ class AppText {
       );
 
   static TextStyle screenTitle(Color color) => GoogleFonts.ibmPlexSerif(
-        fontSize: 22,
-        height: 1.22,
+        fontSize: 21,
+        height: 1.2,
         fontWeight: FontWeight.w600,
         color: color,
       );
@@ -121,6 +160,13 @@ class AppText {
   static TextStyle navBarTitle(Color color) => GoogleFonts.ibmPlexSans(
         fontSize: 12.5,
         fontWeight: FontWeight.w500,
+        color: color,
+      );
+
+  /// Section headings above a group, e.g. Library's "All documents".
+  static TextStyle sectionLabel(Color color) => GoogleFonts.ibmPlexSans(
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
         color: color,
       );
 

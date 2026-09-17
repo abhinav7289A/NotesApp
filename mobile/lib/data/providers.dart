@@ -57,6 +57,17 @@ final chapterProvider =
   },
 );
 
+/// A [ChapterIndex] built once per document and cached for as long as
+/// something's watching it — see `ChapterIndex`'s doc comment for why this
+/// exists (avoiding a per-frame sort+rebuild while dragging to select).
+final chapterIndexProvider =
+    FutureProvider.autoDispose.family<ChapterIndex, String>(
+  (ref, documentId) async {
+    final chapter = await ref.watch(chapterProvider(documentId).future);
+    return ChapterIndex(chapter);
+  },
+);
+
 final localPdfFileProvider = FutureProvider.autoDispose.family<File, String>(
   (ref, documentId) {
     return ref.watch(chapterRepositoryProvider).getLocalPdfFile(documentId);

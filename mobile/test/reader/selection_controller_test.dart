@@ -13,13 +13,19 @@ CanonicalChapter _loadFixture(String name) {
 }
 
 void main() {
+  // `registerPageLayout` posts a deferred `notifyListeners()` via
+  // `WidgetsBinding.instance.addPostFrameCallback`, which requires a bound
+  // Flutter test harness even though these are otherwise plain unit tests
+  // with no widget tree.
+  TestWidgetsFlutterBinding.ensureInitialized();
+
   group('SelectionController on the two-column fixture', () {
     late CanonicalChapter chapter;
     late SelectionController controller;
 
     setUp(() {
       chapter = _loadFixture('chapter_twocolumn');
-      controller = SelectionController(chapter);
+      controller = SelectionController(ChapterIndex(chapter));
       // Two pages stacked vertically, as the reader lays them out.
       controller.registerPageLayout(
         'p00001',

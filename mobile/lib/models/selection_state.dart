@@ -14,6 +14,13 @@ abstract class SelectionState with _$SelectionState {
     required List<String> blockIds,
     required List<String> pageIds,
     required Rect anchorRect,
+    // The first/last selected block's own on-screen rect (not the bounding
+    // box of the whole selection, which is `anchorRect`) — used to place the
+    // two selection handles. Computed once here, in the controller, rather
+    // than re-derived in the widget layer, since the controller already has
+    // the page-layout data needed to compute them.
+    required Rect firstBlockRect,
+    required Rect lastBlockRect,
   }) = _SelectionState;
 }
 

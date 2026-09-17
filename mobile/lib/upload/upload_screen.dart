@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -45,10 +46,17 @@ class _UploadScreenState extends ConsumerState<UploadScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const colors = AppColors.light;
+    final colors = context.appColors;
 
-    if (_documentId != null && _phase == _Phase.processing) {
-      ref.listen(documentStatusProvider(_documentId!), (previous, next) {
+    final currentDocId = _documentId;
+    if (currentDocId != null) {
+      ref.listen(documentStatusProvider(currentDocId), (previous, next) {
+        // Gate the *effect* on phase, not whether we listen at all — the
+        // provider argument (`currentDocId`) only ever transitions null ->
+        // a value once, so listening unconditionally on it is safe and
+        // avoids the Riverpod anti-pattern of gating `ref.listen` itself on
+        // a value (`_phase`) that changes far more often.
+        if (_phase != _Phase.processing) return;
         next.whenData((status) {
           if (status.status == DocumentStatus.ready) {
             setState(() => _phase = _Phase.done);
@@ -68,7 +76,7 @@ class _UploadScreenState extends ConsumerState<UploadScreen> {
         title: Text('Add a document', style: AppText.navBarTitle(colors.ink)),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(AppSpacing.xl4),
         child: _buildBody(colors),
       ),
     );
@@ -123,7 +131,7 @@ class _PickBody extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.xl3),
         SizedBox(
-          height: 52,
+          height: AppControlHeight.pickButton,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: colors.ink,
@@ -137,7 +145,7 @@ class _PickBody extends StatelessWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         SizedBox(
-          height: 52,
+          height: AppControlHeight.pickButton,
           child: OutlinedButton(
             style: OutlinedButton.styleFrom(
               foregroundColor: colors.ink2,
@@ -154,13 +162,14 @@ class _PickBody extends StatelessWidget {
           style: AppText.caption(colors.ink2),
         ),
         const Spacer(),
-        TextButton(
-          onPressed: onSimulateError,
-          child: Text(
-            'Dev: simulate a failed scan',
-            style: AppText.caption(colors.ink2),
+        if (kDebugMode)
+          TextButton(
+            onPressed: onSimulateError,
+            child: Text(
+              'Dev: simulate a failed scan',
+              style: AppText.caption(colors.ink2),
+            ),
           ),
-        ),
       ],
     );
   }
@@ -254,14 +263,27 @@ class _ErrorBody extends ConsumerWidget {
             children: [
               Text(
                 error?.message ?? 'Some pages came out too poor to read',
-                style: AppText.documentH2(colors.ink),
+                style: AppText.documentH2(colors.rose),
+              ),
+              const SizedBox(height: AppSpacing.mdLg),
+              // "Bad scan" vs "good example" comparison — the design uses
+              // real photographic references here; this fixture-only app
+              // has no scan-quality image asset/pipeline to draw from, so
+              // this is a best-effort placeholder (fixed colors + a stand-in
+              // icon), not a claim of pixel-identical imagery.
+              Row(
+                children: [
+                  Expanded(child: _ScanComparisonThumb(background: kBadScanBg, icon: Icons.crop_free, label: 'page 7', labelColor: const Color(0xFF8A919C))),
+                  const SizedBox(width: AppSpacing.xl2),
+                  Expanded(child: _ScanComparisonThumb(background: kGoodScanBg, icon: Icons.check_circle_outline, label: 'like this', labelColor: const Color(0xFF7A8189))),
+                ],
               ),
             ],
           ),
         ),
         const SizedBox(height: AppSpacing.xl3),
         SizedBox(
-          height: 48,
+          height: AppControlHeight.primaryButton,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: colors.ink,
@@ -275,7 +297,7 @@ class _ErrorBody extends ConsumerWidget {
         ),
         const SizedBox(height: AppSpacing.md),
         SizedBox(
-          height: 48,
+          height: AppControlHeight.primaryButton,
           child: OutlinedButton(
             style: OutlinedButton.styleFrom(
               foregroundColor: colors.ink,
@@ -287,6 +309,41 @@ class _ErrorBody extends ConsumerWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// One half of the error state's "bad scan" vs "good example" comparison —
+/// see `_ErrorBody`'s doc comment on why these are stand-in icons rather
+/// than real scan imagery.
+class _ScanComparisonThumb extends StatelessWidget {
+  const _ScanComparisonThumb({
+    required this.background,
+    required this.icon,
+    required this.label,
+    required this.labelColor,
+  });
+
+  final Color background;
+  final IconData icon;
+  final String label;
+  final Color labelColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 78,
+      decoration: BoxDecoration(color: background, border: Border.all(color: const Color(0x22000000))),
+      child: Stack(
+        children: [
+          Center(child: Icon(icon, color: labelColor, size: 22)),
+          Positioned(
+            left: AppSpacing.smMd,
+            bottom: AppSpacing.sm,
+            child: Text(label, style: AppText.provenance(labelColor)),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -313,7 +370,7 @@ class _DoneBody extends ConsumerWidget {
         ),
         const SizedBox(height: AppSpacing.xl3),
         SizedBox(
-          height: 48,
+          height: AppControlHeight.primaryButton,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: colors.ink,

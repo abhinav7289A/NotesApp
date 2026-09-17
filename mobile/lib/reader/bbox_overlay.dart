@@ -10,15 +10,17 @@ import 'coordinate_conversion.dart';
 ///   [showDebugOverlay] is on — see `P1-mobile-CLAUDE.md`: "Verify alignment
 ///   visually before building selection... if those rectangles do not sit
 ///   exactly on the text at 100% and 300% zoom, stop and fix it."
-/// - the selection highlight fill for any selected blocks on this page
-/// - the two selection handles, if the overall selection's first/last block
-///   happens to be on this page
+/// - the selection highlight fill *and* a 1px amber outline ring for any
+///   selected blocks on this page, per the design's selected-paragraph spec.
 ///
-/// Handles are drawn per the design spec (13px visible circle inside a 44px
-/// touch target) but are **not yet independently draggable** in this first
-/// pass — only the initial long-press-drag creates/extends a selection.
-/// Dragging from a handle to adjust one end of an existing selection is a
-/// follow-up, noted rather than silently skipped.
+/// The two selection handles are **not** drawn here — they're separate,
+/// animated widgets positioned in `reader_screen.dart` from
+/// `SelectionState.firstBlockRect`/`lastBlockRect`, since a `CustomPainter`
+/// has no widget lifecycle to hook an entrance animation to. They're also
+/// **not yet independently draggable** in this first pass — only the
+/// initial long-press-drag creates/extends a selection. Dragging from a
+/// handle to adjust one end of an existing selection is a follow-up, noted
+/// rather than silently skipped.
 class ReaderPageOverlayPainter extends CustomPainter {
   ReaderPageOverlayPainter({
     required this.rotation,
@@ -63,23 +65,21 @@ class ReaderPageOverlayPainter extends CustomPainter {
     final fillPaint = Paint()
       ..color = colors.selectionFill
       ..style = PaintingStyle.fill;
+    // Per the design's selected-paragraph spec: a 1px amber outline ring
+    // around each selected block, on top of the fill. Stroked per-block
+    // rather than once around the whole selection's bounding box, so a
+    // multi-line / non-contiguous selection reads correctly instead of one
+    // rectangle spanning gaps that weren't actually selected.
+    final outlinePaint = Paint()
+      ..color = colors.amber
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1;
 
-    Rect? first;
-    Rect? last;
     for (final block in blocksOnPage) {
       if (!selectedIds.contains(block.blockId)) continue;
       final rect = toScreen(block.bbox, _localLayout(size));
       canvas.drawRect(rect, fillPaint);
-      if (block.blockId == selection!.blockIds.first) first = rect;
-      if (block.blockId == selection!.blockIds.last) last = rect;
-    }
-
-    final handlePaint = Paint()..color = colors.amber;
-    if (first != null) {
-      canvas.drawCircle(first.bottomLeft, 6.5, handlePaint);
-    }
-    if (last != null) {
-      canvas.drawCircle(last.bottomRight, 6.5, handlePaint);
+      canvas.drawRect(rect, outlinePaint);
     }
   }
 

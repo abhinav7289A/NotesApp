@@ -25,9 +25,9 @@ import 'coordinate_conversion.dart';
 /// the gesture started on — see the class-level note in `reader_screen.dart`
 /// for why plain widget-local gesture handling isn't enough for that.
 class SelectionController extends ChangeNotifier {
-  SelectionController(this._chapter);
+  SelectionController(this._index);
 
-  CanonicalChapter _chapter;
+  ChapterIndex _index;
   final Map<String, PageLayout> _pageLayouts = {};
 
   Offset? _dragStart;
@@ -37,16 +37,32 @@ class SelectionController extends ChangeNotifier {
   SelectionState? get selection => _selection;
   bool get isActive => _selection != null;
 
-  void updateChapter(CanonicalChapter chapter) {
-    _chapter = chapter;
+  void updateIndex(ChapterIndex index) {
+    _index = index;
   }
 
   /// Called from `pageOverlaysBuilder` for every visible page, every build.
   /// [pageRect] must be on-screen, logical-pixel coordinates (what pdfrx
   /// hands the builder) — see `coordinate_conversion.dart`.
+  ///
+  /// Notifies listeners (deferred to after the current frame, since this is
+  /// called *during* pdfrx's own build pass and calling `notifyListeners()`
+  /// synchronously here would rebuild widgets mid-build) when a page's
+  /// layout actually changes — i.e. on scroll/zoom, not on every drag-update
+  /// frame, since drags don't cause pdfrx to re-invoke this callback. Used
+  /// by the reader's dark-mode figure overlay to reposition itself when
+  /// pages move, without needing its own separate notification channel.
   void registerPageLayout(String pageId, PageLayout layout) {
+    final existing = _pageLayouts[pageId];
     _pageLayouts[pageId] = layout;
+    if (existing == null || existing.pageRect != layout.pageRect || existing.rotation != layout.rotation) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => notifyListeners());
+    }
   }
+
+  /// The last-registered on-screen layout for [pageId], if that page is
+  /// currently visible (or was, as of the last frame it was).
+  PageLayout? layoutFor(String pageId) => _pageLayouts[pageId];
 
   void startDrag(String originPageId, Offset localPosition) {
     final origin = _pageLayouts[originPageId];
@@ -87,7 +103,7 @@ class SelectionController extends ChangeNotifier {
     for (final entry in _pageLayouts.entries) {
       final layout = entry.value;
       if (!dragRect.overlaps(layout.pageRect)) continue;
-      for (final block in _chapter.blocksByPage[entry.key] ?? const <ChapterBlock>[]) {
+      for (final block in _index.blocksByPage[entry.key] ?? const <ChapterBlock>[]) {
         if (block.type == BlockType.header ||
             block.type == BlockType.footer ||
             block.type == BlockType.pageNumber) {
@@ -108,7 +124,9 @@ class SelectionController extends ChangeNotifier {
 
     touched.sort((a, b) => a.order.compareTo(b.order));
 
-    var anchor = toScreen(touched.first.bbox, _pageLayouts[touched.first.pageId]!);
+    final firstRect = toScreen(touched.first.bbox, _pageLayouts[touched.first.pageId]!);
+    final lastRect = toScreen(touched.last.bbox, _pageLayouts[touched.last.pageId]!);
+    var anchor = firstRect;
     for (final b in touched.skip(1)) {
       anchor = anchor.expandToInclude(toScreen(b.bbox, _pageLayouts[b.pageId]!));
     }
@@ -118,6 +136,8 @@ class SelectionController extends ChangeNotifier {
       blockIds: touched.map((b) => b.blockId).toList(growable: false),
       pageIds: touched.map((b) => b.pageId).toSet().toList(growable: false),
       anchorRect: anchor,
+      firstBlockRect: firstRect,
+      lastBlockRect: lastRect,
     );
     notifyListeners();
   }

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SelectionState {
 
- String get text; List<String> get blockIds; List<String> get pageIds; Rect get anchorRect;
+ String get text; List<String> get blockIds; List<String> get pageIds; Rect get anchorRect; Rect get firstBlockRect; Rect get lastBlockRect;
 /// Create a copy of SelectionState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,20 +27,20 @@ $SelectionStateCopyWith<SelectionState> get copyWith => _$SelectionStateCopyWith
 @override
 bool operator ==(Object other) {
   final _this = this as SelectionState;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SelectionState&&(identical(other.text, _this.text) || other.text == _this.text)&&const DeepCollectionEquality().equals(other.blockIds, _this.blockIds)&&const DeepCollectionEquality().equals(other.pageIds, _this.pageIds)&&(identical(other.anchorRect, _this.anchorRect) || other.anchorRect == _this.anchorRect));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SelectionState&&(identical(other.text, _this.text) || other.text == _this.text)&&const DeepCollectionEquality().equals(other.blockIds, _this.blockIds)&&const DeepCollectionEquality().equals(other.pageIds, _this.pageIds)&&(identical(other.anchorRect, _this.anchorRect) || other.anchorRect == _this.anchorRect)&&(identical(other.firstBlockRect, _this.firstBlockRect) || other.firstBlockRect == _this.firstBlockRect)&&(identical(other.lastBlockRect, _this.lastBlockRect) || other.lastBlockRect == _this.lastBlockRect));
 }
 
 
 @override
 int get hashCode {
   final _this = this as SelectionState;
-  return Object.hash(runtimeType,_this.text,const DeepCollectionEquality().hash(_this.blockIds),const DeepCollectionEquality().hash(_this.pageIds),_this.anchorRect);
+  return Object.hash(runtimeType,_this.text,const DeepCollectionEquality().hash(_this.blockIds),const DeepCollectionEquality().hash(_this.pageIds),_this.anchorRect,_this.firstBlockRect,_this.lastBlockRect);
 }
 
 @override
 String toString() {
   final _this = this as SelectionState;
-  return 'SelectionState(text: ${_this.text}, blockIds: ${_this.blockIds}, pageIds: ${_this.pageIds}, anchorRect: ${_this.anchorRect})';
+  return 'SelectionState(text: ${_this.text}, blockIds: ${_this.blockIds}, pageIds: ${_this.pageIds}, anchorRect: ${_this.anchorRect}, firstBlockRect: ${_this.firstBlockRect}, lastBlockRect: ${_this.lastBlockRect})';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $SelectionStateCopyWith<$Res>  {
   factory $SelectionStateCopyWith(SelectionState value, $Res Function(SelectionState) _then) = _$SelectionStateCopyWithImpl;
 @useResult
 $Res call({
- String text, List<String> blockIds, List<String> pageIds, Rect anchorRect
+ String text, List<String> blockIds, List<String> pageIds, Rect anchorRect, Rect firstBlockRect, Rect lastBlockRect
 });
 
 
@@ -68,12 +68,14 @@ class _$SelectionStateCopyWithImpl<$Res>
 
 /// Create a copy of SelectionState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? blockIds = null,Object? pageIds = null,Object? anchorRect = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? text = null,Object? blockIds = null,Object? pageIds = null,Object? anchorRect = null,Object? firstBlockRect = null,Object? lastBlockRect = null,}) {
   return _then(SelectionState(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,blockIds: null == blockIds ? _self.blockIds : blockIds // ignore: cast_nullable_to_non_nullable
 as List<String>,pageIds: null == pageIds ? _self.pageIds : pageIds // ignore: cast_nullable_to_non_nullable
 as List<String>,anchorRect: null == anchorRect ? _self.anchorRect : anchorRect // ignore: cast_nullable_to_non_nullable
+as Rect,firstBlockRect: null == firstBlockRect ? _self.firstBlockRect : firstBlockRect // ignore: cast_nullable_to_non_nullable
+as Rect,lastBlockRect: null == lastBlockRect ? _self.lastBlockRect : lastBlockRect // ignore: cast_nullable_to_non_nullable
 as Rect,
   ));
 }
@@ -159,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect,  Rect firstBlockRect,  Rect lastBlockRect)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SelectionState() when $default != null:
-return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _:
+return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect,_that.firstBlockRect,_that.lastBlockRect);case _:
   return orElse();
 
 }
@@ -180,10 +182,10 @@ return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect,  Rect firstBlockRect,  Rect lastBlockRect)  $default,) {final _that = this;
 switch (_that) {
 case _SelectionState():
-return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _:
+return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect,_that.firstBlockRect,_that.lastBlockRect);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +202,10 @@ return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String text,  List<String> blockIds,  List<String> pageIds,  Rect anchorRect,  Rect firstBlockRect,  Rect lastBlockRect)?  $default,) {final _that = this;
 switch (_that) {
 case _SelectionState() when $default != null:
-return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _:
+return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect,_that.firstBlockRect,_that.lastBlockRect);case _:
   return null;
 
 }
@@ -215,7 +217,7 @@ return $default(_that.text,_that.blockIds,_that.pageIds,_that.anchorRect);case _
 
 
 class _SelectionState implements SelectionState {
-  const _SelectionState({required this.text, required  List<String> blockIds, required  List<String> pageIds, required this.anchorRect}): _blockIds = blockIds,_pageIds = pageIds;
+  const _SelectionState({required this.text, required  List<String> blockIds, required  List<String> pageIds, required this.anchorRect, required this.firstBlockRect, required this.lastBlockRect}): _blockIds = blockIds,_pageIds = pageIds;
   
 
 @override final  String text;
@@ -234,6 +236,8 @@ class _SelectionState implements SelectionState {
 }
 
 @override final  Rect anchorRect;
+@override final  Rect firstBlockRect;
+@override final  Rect lastBlockRect;
 
 /// Create a copy of SelectionState
 /// with the given fields replaced by the non-null parameter values.
@@ -245,18 +249,18 @@ _$SelectionStateCopyWith<_SelectionState> get copyWith => __$SelectionStateCopyW
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SelectionState&&(identical(other.text, text) || other.text == text)&&const DeepCollectionEquality().equals(other.blockIds, _blockIds)&&const DeepCollectionEquality().equals(other.pageIds, _pageIds)&&(identical(other.anchorRect, anchorRect) || other.anchorRect == anchorRect));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _SelectionState&&(identical(other.text, text) || other.text == text)&&const DeepCollectionEquality().equals(other.blockIds, _blockIds)&&const DeepCollectionEquality().equals(other.pageIds, _pageIds)&&(identical(other.anchorRect, anchorRect) || other.anchorRect == anchorRect)&&(identical(other.firstBlockRect, firstBlockRect) || other.firstBlockRect == firstBlockRect)&&(identical(other.lastBlockRect, lastBlockRect) || other.lastBlockRect == lastBlockRect));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,text,const DeepCollectionEquality().hash(_blockIds),const DeepCollectionEquality().hash(_pageIds),anchorRect);
+    return Object.hash(runtimeType,text,const DeepCollectionEquality().hash(_blockIds),const DeepCollectionEquality().hash(_pageIds),anchorRect,firstBlockRect,lastBlockRect);
 }
 
 @override
 String toString() {
-    return 'SelectionState(text: $text, blockIds: $blockIds, pageIds: $pageIds, anchorRect: $anchorRect)';
+    return 'SelectionState(text: $text, blockIds: $blockIds, pageIds: $pageIds, anchorRect: $anchorRect, firstBlockRect: $firstBlockRect, lastBlockRect: $lastBlockRect)';
 }
 
 
@@ -267,7 +271,7 @@ abstract mixin class _$SelectionStateCopyWith<$Res> implements $SelectionStateCo
   factory _$SelectionStateCopyWith(_SelectionState value, $Res Function(_SelectionState) _then) = __$SelectionStateCopyWithImpl;
 @override @useResult
 $Res call({
- String text, List<String> blockIds, List<String> pageIds, Rect anchorRect
+ String text, List<String> blockIds, List<String> pageIds, Rect anchorRect, Rect firstBlockRect, Rect lastBlockRect
 });
 
 
@@ -284,12 +288,14 @@ class __$SelectionStateCopyWithImpl<$Res>
 
 /// Create a copy of SelectionState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? text = null,Object? blockIds = null,Object? pageIds = null,Object? anchorRect = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? text = null,Object? blockIds = null,Object? pageIds = null,Object? anchorRect = null,Object? firstBlockRect = null,Object? lastBlockRect = null,}) {
   return _then(_SelectionState(
 text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
 as String,blockIds: null == blockIds ? _self._blockIds : blockIds // ignore: cast_nullable_to_non_nullable
 as List<String>,pageIds: null == pageIds ? _self._pageIds : pageIds // ignore: cast_nullable_to_non_nullable
 as List<String>,anchorRect: null == anchorRect ? _self.anchorRect : anchorRect // ignore: cast_nullable_to_non_nullable
+as Rect,firstBlockRect: null == firstBlockRect ? _self.firstBlockRect : firstBlockRect // ignore: cast_nullable_to_non_nullable
+as Rect,lastBlockRect: null == lastBlockRect ? _self.lastBlockRect : lastBlockRect // ignore: cast_nullable_to_non_nullable
 as Rect,
   ));
 }

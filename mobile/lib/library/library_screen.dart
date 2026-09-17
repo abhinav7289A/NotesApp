@@ -17,14 +17,14 @@ class LibraryScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final colors = AppColors.light; // P1 has no settings screen for theme yet
+    final colors = context.appColors;
     final documentsAsync = ref.watch(documentsListProvider);
 
     return Scaffold(
       backgroundColor: colors.chrome,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xl3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -43,17 +43,33 @@ class LibraryScreen extends ConsumerWidget {
                   ),
                   data: (docs) => docs.isEmpty
                       ? _EmptyLibrary(colors: colors)
-                      : ListView.separated(
-                          itemCount: docs.length,
-                          separatorBuilder: (_, _) => Divider(height: 1, color: colors.hairline),
-                          itemBuilder: (context, i) => _DocumentRow(doc: docs[i], colors: colors),
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('All documents', style: AppText.sectionLabel(colors.ink)),
+                            const SizedBox(height: AppSpacing.lg),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: colors.hairline),
+                                  borderRadius: BorderRadius.circular(AppRadii.primaryButton),
+                                ),
+                                clipBehavior: Clip.antiAlias,
+                                child: ListView.separated(
+                                  itemCount: docs.length,
+                                  separatorBuilder: (_, _) => Divider(height: 1, color: colors.hairline),
+                                  itemBuilder: (context, i) => _DocumentRow(doc: docs[i], colors: colors),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                 ),
               ),
               const SizedBox(height: AppSpacing.xl3),
               SizedBox(
                 width: double.infinity,
-                height: 48,
+                height: AppControlHeight.primaryButton,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: colors.ink,
@@ -133,11 +149,17 @@ class _EmptyLibrary extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Nothing here yet', style: AppText.documentH2(colors.ink)),
+            Text('Nothing here yet', style: AppText.screenTitle(colors.ink)),
             const SizedBox(height: AppSpacing.md),
             Text(
               'Add one chapter and you can select any paragraph to ask about it.',
-              style: AppText.bodyChrome(colors.ink2),
+              style: AppText.documentBody(colors.ink),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            Text(
+              'A photograph of two pages is enough to start.',
+              style: AppText.documentBody(colors.ink2),
               textAlign: TextAlign.center,
             ),
           ],

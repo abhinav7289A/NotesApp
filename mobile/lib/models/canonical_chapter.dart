@@ -85,20 +85,40 @@ abstract class CanonicalChapter with _$CanonicalChapter {
 }
 
 extension CanonicalChapterLookup on CanonicalChapter {
-  /// Blocks in true reading order (the `order` field), never JSON array
-  /// order and never visual left-to-right — see the two-column fixture.
-  List<ChapterBlock> get blocksInReadingOrder =>
-      [...blocks]..sort((a, b) => a.order.compareTo(b.order));
-
   Map<String, ChapterPage> get pagesById => {
         for (final p in pages) p.pageId: p,
       };
+}
 
-  Map<String, List<ChapterBlock>> get blocksByPage {
-    final map = <String, List<ChapterBlock>>{};
-    for (final b in blocksInReadingOrder) {
-      map.putIfAbsent(b.pageId, () => []).add(b);
+/// Precomputed lookups over a [CanonicalChapter]'s blocks, built once and
+/// reused for the chapter's lifetime.
+///
+/// This replaces two getters that used to live directly on
+/// [CanonicalChapterLookup] (`blocksInReadingOrder`, `blocksByPage`), which
+/// recomputed a full sort and rebuilt a fresh `Map` on *every* access. Those
+/// getters were called once per visible page on every `PdfViewer` rebuild
+/// and once per registered page on every selection-drag update — i.e. on
+/// every pointer-move frame while dragging — which was the dominant cause of
+/// dragging-to-select feeling laggy. Chapters are immutable once loaded
+/// (keyed by `content_hash`), so indexing once here and reusing the result
+/// is always safe.
+class ChapterIndex {
+  factory ChapterIndex(CanonicalChapter chapter) {
+    final sorted = [...chapter.blocks]..sort((a, b) => a.order.compareTo(b.order));
+    final byPage = <String, List<ChapterBlock>>{};
+    for (final b in sorted) {
+      byPage.putIfAbsent(b.pageId, () => []).add(b);
     }
-    return map;
+    return ChapterIndex._(chapter, sorted, byPage);
   }
+
+  const ChapterIndex._(this.chapter, this.blocksInReadingOrder, this.blocksByPage);
+
+  final CanonicalChapter chapter;
+
+  /// Blocks in true reading order (the `order` field), never JSON array
+  /// order and never visual left-to-right — see the two-column fixture.
+  final List<ChapterBlock> blocksInReadingOrder;
+
+  final Map<String, List<ChapterBlock>> blocksByPage;
 }
