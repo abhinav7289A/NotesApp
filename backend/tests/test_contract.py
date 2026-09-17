@@ -24,6 +24,15 @@ def test_fixture_matches_schema_and_model(path: Path) -> None:
     CanonicalChapter.model_validate(data)
 
 
+def test_twocolumn_fixture_reads_left_column_before_right() -> None:
+    """Acceptance check 5: block order follows human reading order, not visual left-to-right."""
+    data = json.loads((CONTRACTS / "fixtures" / "chapter_twocolumn.json").read_text(encoding="utf-8"))
+    tags = [b["text"].split("]")[0][1:] for b in data["blocks"] if b["type"] == "paragraph"]
+    pages = len(data["pages"])
+    expected = [f"{side}{p}.{n}" for p in range(1, pages + 1) for side, n in (("L", 1), ("L", 2), ("R", 1), ("R", 2), ("L", 3), ("R", 3))]
+    assert tags == expected
+
+
 @pytest.mark.parametrize("path", FIXTURES, ids=lambda p: p.name)
 def test_fixture_bboxes_and_order(path: Path) -> None:
     data = json.loads(path.read_text(encoding="utf-8"))

@@ -78,6 +78,14 @@ class ErrorCode(str, Enum):
     ENCRYPTED_PDF = "ENCRYPTED_PDF"
     TOO_MANY_PAGES = "TOO_MANY_PAGES"
     CORRUPT_FILE = "CORRUPT_FILE"
+    FILE_TOO_LARGE = "FILE_TOO_LARGE"
+    INTERNAL_ERROR = "INTERNAL_ERROR"  # clients should show a generic retry screen for unknown codes too
+
+
+class ApiError(BaseModel):
+    """Body of every 4xx: {"detail": {"code": ..., "message": ...}}."""
+
+    detail: dict[str, str] = Field(examples=[{"code": "NOT_FOUND", "message": "Document not found."}])
 
 
 class DocumentError(BaseModel):
@@ -86,7 +94,7 @@ class DocumentError(BaseModel):
 
 
 class CreateDocumentRequest(BaseModel):
-    filename: str = Field(examples=["jesc106.pdf"])
+    filename: str = Field(max_length=255, pattern=r"(?i)\.pdf$", examples=["jesc106.pdf"])
     size_bytes: int = Field(gt=0, examples=[4_200_000])
 
 
