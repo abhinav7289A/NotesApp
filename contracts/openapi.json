@@ -1,6 +1,29 @@
 {
   "components": {
     "schemas": {
+      "ApiError": {
+        "description": "Body of every 4xx: {\"detail\": {\"code\": ..., \"message\": ...}}.",
+        "properties": {
+          "detail": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "examples": [
+              {
+                "code": "NOT_FOUND",
+                "message": "Document not found."
+              }
+            ],
+            "title": "Detail",
+            "type": "object"
+          }
+        },
+        "required": [
+          "detail"
+        ],
+        "title": "ApiError",
+        "type": "object"
+      },
       "Block": {
         "additionalProperties": false,
         "properties": {
@@ -261,6 +284,8 @@
             "examples": [
               "jesc106.pdf"
             ],
+            "maxLength": 255,
+            "pattern": "(?i)\\.pdf$",
             "title": "Filename",
             "type": "string"
           },
@@ -436,7 +461,9 @@
           "SCAN_TOO_POOR",
           "ENCRYPTED_PDF",
           "TOO_MANY_PAGES",
-          "CORRUPT_FILE"
+          "CORRUPT_FILE",
+          "FILE_TOO_LARGE",
+          "INTERNAL_ERROR"
         ],
         "title": "ErrorCode",
         "type": "string"
@@ -597,6 +624,59 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/v1/chapters/{chapter_id}/pages/{page_id}/image": {
+      "get": {
+        "operationId": "get_page_image_v1_chapters__chapter_id__pages__page_id__image_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "chapter_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Chapter Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page_id",
+            "required": true,
+            "schema": {
+              "pattern": "^p[0-9]{5}$",
+              "title": "Page Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Redirect to a signed image URL valid for 15 minutes. Never cache it."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Page Image"
+      }
+    },
     "/v1/documents": {
       "get": {
         "operationId": "list_documents_v1_documents_get",
@@ -619,6 +699,7 @@
         "summary": "List Documents"
       },
       "post": {
+        "description": "Register an upload. The client PUTs the PDF bytes to `upload_url` (Content-Type: application/pdf), then calls ingest.",
         "operationId": "create_document_v1_documents_post",
         "requestBody": {
           "content": {
@@ -641,6 +722,16 @@
             },
             "description": "Successful Response"
           },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Request Entity Too Large"
+          },
           "422": {
             "content": {
               "application/json": {
@@ -657,6 +748,7 @@
     },
     "/v1/documents/{document_id}": {
       "get": {
+        "description": "Poll this for status and progress (0\u2013100) while ingest runs.",
         "operationId": "get_document_v1_documents__document_id__get",
         "parameters": [
           {
@@ -680,6 +772,26 @@
               }
             },
             "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
           },
           "422": {
             "content": {
@@ -721,6 +833,26 @@
             },
             "description": "Successful Response"
           },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
           "422": {
             "content": {
               "application/json": {
@@ -737,6 +869,7 @@
     },
     "/v1/documents/{document_id}/ingest": {
       "post": {
+        "description": "Idempotent: calling again while a job is queued/running, or after success, returns the existing job.",
         "operationId": "ingest_document_v1_documents__document_id__ingest_post",
         "parameters": [
           {
@@ -761,42 +894,25 @@
             },
             "description": "Successful Response"
           },
-          "422": {
+          "404": {
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/ApiError"
                 }
               }
             },
-            "description": "Validation Error"
-          }
-        },
-        "summary": "Ingest Document"
-      }
-    },
-    "/v1/pages/{page_id}/image": {
-      "get": {
-        "operationId": "get_page_image_v1_pages__page_id__image_get",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "page_id",
-            "required": true,
-            "schema": {
-              "title": "Page Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "302": {
+            "description": "Not Found"
+          },
+          "409": {
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
               }
             },
-            "description": "Redirect to a signed R2 URL, 15 min expiry"
+            "description": "Conflict"
           },
           "422": {
             "content": {
@@ -809,7 +925,7 @@
             "description": "Validation Error"
           }
         },
-        "summary": "Get Page Image"
+        "summary": "Ingest Document"
       }
     }
   }
