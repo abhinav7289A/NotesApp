@@ -1,28 +1,855 @@
 {
   "schema_version": 1,
-  "chapter_id": "39f98b22-13fe-414e-a123-8bbc71d4118f",
-  "content_hash": "678986f4a775d1a9412e297b87d9c6d3d9a7d56d585939bd2d36eb51414b1958",
-  "title": "History VIII, Chapter 4: The Mughal Empire",
-  "source_filename": "history-viii-ch4-scan.pdf",
+  "chapter_id": "cb903ef9-6104-5242-9dd5-ffb98a0c1781",
+  "content_hash": "8f4c2dd5671844de67f5a144b92c8347aa8838bea809cdf2ef71ca4873ad7cd7",
+  "title": "Control and Coordination",
+  "source_filename": "chapter_scanned.pdf",
   "language": "en",
-  "page_count": 2,
+  "page_count": 8,
   "ocr_engine": "surya-0.6",
-  "created_at": "2026-09-03T14:20:00Z",
+  "created_at": "2026-09-14T10:00:00Z",
   "pages": [
-    { "page_id": "p00001", "index": 0, "width_pt": 419.53, "height_pt": 595.28, "rotation": 0, "image_key": "pages/p00001.webp", "has_text_layer": false },
-    { "page_id": "p00002", "index": 1, "width_pt": 419.53, "height_pt": 595.28, "rotation": 0, "image_key": "pages/p00002.webp", "has_text_layer": false }
+    {
+      "page_id": "p00001",
+      "index": 0,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00001.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00002",
+      "index": 1,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00002.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00003",
+      "index": 2,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00003.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00004",
+      "index": 3,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00004.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00005",
+      "index": 4,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00005.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00006",
+      "index": 5,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00006.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00007",
+      "index": 6,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00007.webp",
+      "has_text_layer": false
+    },
+    {
+      "page_id": "p00008",
+      "index": 7,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_scanned/p00008.webp",
+      "has_text_layer": false
+    }
   ],
   "blocks": [
-    { "block_id": "p00001_b001", "page_id": "p00001", "type": "heading", "level": 1, "text": "The Mughal Empire", "bbox": [0.09, 0.05, 0.91, 0.11], "order": 0, "confidence": 0.93, "image_key": null },
-    { "block_id": "p00001_b002", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Babur, a descendant of both Timur and Genghis Khan, crossed into the Indian subcontinent from Central Asia and defeated the Sultan of Delhi at the first battle of Panipat in 1526, founding the dynasty that would rule much of the subcontinent for over three centuries.", "bbox": [0.08, 0.13, 0.92, 0.32], "order": 1, "confidence": 0.87, "image_key": null },
-    { "block_id": "p00001_b003", "page_id": "p00001", "type": "paragraph", "level": null, "text": "His grandson Akbar expanded the empire through a combination of military conquest and marriage alliances, and introduced administrative reforms that brought Hindu and Muslim nobility into a shared system of governance.", "bbox": [0.08, 0.33, 0.92, 0.52], "order": 2, "confidence": 0.81, "image_key": null },
-    { "block_id": "p00001_b004", "page_id": "p00001", "type": "figure", "level": null, "text": null, "bbox": [0.18, 0.55, 0.82, 0.80], "order": 3, "confidence": null, "image_key": "figures/p00001_b004.webp" },
-    { "block_id": "p00001_b005", "page_id": "p00001", "type": "caption", "level": null, "text": "A miniature painting depicting the court of Akbar at Fatehpur Sikri.", "bbox": [0.15, 0.81, 0.85, 0.85], "order": 4, "confidence": 0.76, "image_key": null },
-
-    { "block_id": "p00002_b001", "page_id": "p00002", "type": "heading", "level": 2, "text": "Architecture and Administration", "bbox": [0.08, 0.06, 0.92, 0.11], "order": 5, "confidence": 0.90, "image_key": null },
-    { "block_id": "p00002_b002", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Mughal architecture blended Persian, Central Asian and indigenous Indian styles, producing monuments such as Humayun's Tomb and, later, the Taj Mahal under Shah Jahan.", "bbox": [0.08, 0.12, 0.92, 0.28], "order": 6, "confidence": 0.88, "image_key": null },
-    { "block_id": "p00002_b003", "page_id": "p00002", "type": "list_item", "level": null, "text": "(a) The mansabdari system ranked nobles by military and administrative obligation.", "bbox": [0.10, 0.30, 0.90, 0.35], "order": 7, "confidence": 0.91, "image_key": null },
-    { "block_id": "p00002_b004", "page_id": "p00002", "type": "list_item", "level": null, "text": "(b) Land revenue was assessed and collected through a standardised measurement system.", "bbox": [0.10, 0.36, 0.90, 0.41], "order": 8, "confidence": 0.89, "image_key": null },
-    { "block_id": "p00002_b005", "page_id": "p00002", "type": "paragraph", "level": null, "text": "By the early eighteenth century, weakened central authority, costly wars in the Deccan and the rise of regional powers had eroded the empire's control far beyond its heartland, a passage of the scan too faint to read with full confidence.", "bbox": [0.08, 0.43, 0.92, 0.70], "order": 9, "confidence": 0.69, "image_key": null }
+    {
+      "block_id": "p00001_b001",
+      "page_id": "p00001",
+      "type": "heading",
+      "text": "Control and Coordination",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.55,
+      "image_key": null,
+      "order": 1
+    },
+    {
+      "block_id": "p00001_b002",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "All living organisms nccd energy to carry out the life processes that keep them alive. Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.45,
+      "image_key": null,
+      "order": 2
+    },
+    {
+      "block_id": "p00001_b003",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "पौधे प्रकाश संश्लेषण द्वारा अपना भोजन स्वयं बनाते हैं।",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.4,
+      "image_key": null,
+      "order": 3
+    },
+    {
+      "block_id": "p00001_b004",
+      "page_id": "p00001",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00001_fig.webp",
+      "order": 4
+    },
+    {
+      "block_id": "p00001_b005",
+      "page_id": "p00001",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 5
+    },
+    {
+      "block_id": "p00001_b006",
+      "page_id": "p00001",
+      "type": "page_number",
+      "text": "1",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 6
+    },
+    {
+      "block_id": "p00002_b001",
+      "page_id": "p00002",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.65,
+      "image_key": null,
+      "order": 7
+    },
+    {
+      "block_id": "p00002_b002",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "Nutrition is thc proccss of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.55,
+      "image_key": null,
+      "order": 8
+    },
+    {
+      "block_id": "p00002_b003",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.5,
+      "image_key": null,
+      "order": 9
+    },
+    {
+      "block_id": "p00002_b004",
+      "page_id": "p00002",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00002_fig.webp",
+      "order": 10
+    },
+    {
+      "block_id": "p00002_b005",
+      "page_id": "p00002",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 11
+    },
+    {
+      "block_id": "p00002_b006",
+      "page_id": "p00002",
+      "type": "page_number",
+      "text": "2",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 12
+    },
+    {
+      "block_id": "p00003_b001",
+      "page_id": "p00003",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.75,
+      "image_key": null,
+      "order": 13
+    },
+    {
+      "block_id": "p00003_b002",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "Autotrophs such as grccn plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.65,
+      "image_key": null,
+      "order": 14
+    },
+    {
+      "block_id": "p00003_b003",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.6,
+      "image_key": null,
+      "order": 15
+    },
+    {
+      "block_id": "p00003_b004",
+      "page_id": "p00003",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00003_fig.webp",
+      "order": 16
+    },
+    {
+      "block_id": "p00003_b005",
+      "page_id": "p00003",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 17
+    },
+    {
+      "block_id": "p00003_b006",
+      "page_id": "p00003",
+      "type": "page_number",
+      "text": "3",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 18
+    },
+    {
+      "block_id": "p00004_b001",
+      "page_id": "p00004",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.85,
+      "image_key": null,
+      "order": 19
+    },
+    {
+      "block_id": "p00004_b002",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "During photosynthcsis, carbon dioxidc and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.75,
+      "image_key": null,
+      "order": 20
+    },
+    {
+      "block_id": "p00004_b003",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "पौधे प्रकाश संश्लेषण द्वारा अपना भोजन स्वयं बनाते हैं।",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.7,
+      "image_key": null,
+      "order": 21
+    },
+    {
+      "block_id": "p00004_b004",
+      "page_id": "p00004",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00004_fig.webp",
+      "order": 22
+    },
+    {
+      "block_id": "p00004_b005",
+      "page_id": "p00004",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 23
+    },
+    {
+      "block_id": "p00004_b006",
+      "page_id": "p00004",
+      "type": "page_number",
+      "text": "4",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 24
+    },
+    {
+      "block_id": "p00005_b001",
+      "page_id": "p00005",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.55,
+      "image_key": null,
+      "order": 25
+    },
+    {
+      "block_id": "p00005_b002",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "Chlorophyll in thc chloroplasts absorbs light cnergy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.45,
+      "image_key": null,
+      "order": 26
+    },
+    {
+      "block_id": "p00005_b003",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.4,
+      "image_key": null,
+      "order": 27
+    },
+    {
+      "block_id": "p00005_b004",
+      "page_id": "p00005",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00005_fig.webp",
+      "order": 28
+    },
+    {
+      "block_id": "p00005_b005",
+      "page_id": "p00005",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 29
+    },
+    {
+      "block_id": "p00005_b006",
+      "page_id": "p00005",
+      "type": "page_number",
+      "text": "5",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 30
+    },
+    {
+      "block_id": "p00006_b001",
+      "page_id": "p00006",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.65,
+      "image_key": null,
+      "order": 31
+    },
+    {
+      "block_id": "p00006_b002",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "Hctcrotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.55,
+      "image_key": null,
+      "order": 32
+    },
+    {
+      "block_id": "p00006_b003",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.5,
+      "image_key": null,
+      "order": 33
+    },
+    {
+      "block_id": "p00006_b004",
+      "page_id": "p00006",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00006_fig.webp",
+      "order": 34
+    },
+    {
+      "block_id": "p00006_b005",
+      "page_id": "p00006",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 35
+    },
+    {
+      "block_id": "p00006_b006",
+      "page_id": "p00006",
+      "type": "page_number",
+      "text": "6",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 36
+    },
+    {
+      "block_id": "p00007_b001",
+      "page_id": "p00007",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.75,
+      "image_key": null,
+      "order": 37
+    },
+    {
+      "block_id": "p00007_b002",
+      "page_id": "p00007",
+      "type": "paragraph",
+      "text": "In human bcings, digcstion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.65,
+      "image_key": null,
+      "order": 38
+    },
+    {
+      "block_id": "p00007_b003",
+      "page_id": "p00007",
+      "type": "paragraph",
+      "text": "पौधे प्रकाश संश्लेषण द्वारा अपना भोजन स्वयं बनाते हैं।",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.6,
+      "image_key": null,
+      "order": 39
+    },
+    {
+      "block_id": "p00007_b004",
+      "page_id": "p00007",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00007_fig.webp",
+      "order": 40
+    },
+    {
+      "block_id": "p00007_b005",
+      "page_id": "p00007",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 41
+    },
+    {
+      "block_id": "p00007_b006",
+      "page_id": "p00007",
+      "type": "page_number",
+      "text": "7",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 42
+    },
+    {
+      "block_id": "p00008_b001",
+      "page_id": "p00008",
+      "type": "heading",
+      "text": "Control and Coordinaton",
+      "bbox": [
+        0.12,
+        0.07,
+        0.75,
+        0.11
+      ],
+      "level": 1,
+      "confidence": 0.85,
+      "image_key": null,
+      "order": 43
+    },
+    {
+      "block_id": "p00008_b002",
+      "page_id": "p00008",
+      "type": "paragraph",
+      "text": "Rcspiration rcleases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.1,
+        0.14,
+        0.88,
+        0.34
+      ],
+      "level": null,
+      "confidence": 0.75,
+      "image_key": null,
+      "order": 44
+    },
+    {
+      "block_id": "p00008_b003",
+      "page_id": "p00008",
+      "type": "paragraph",
+      "text": "Transportation in plants happens through xylem and phloem tissues. All living organisms need energy to carry out the life processes that keep them alive. Nutrition is the process of taking in food and using it to obtain energy and build the body.",
+      "bbox": [
+        0.11,
+        0.37,
+        0.9,
+        0.52
+      ],
+      "level": null,
+      "confidence": 0.7,
+      "image_key": null,
+      "order": 45
+    },
+    {
+      "block_id": "p00008_b004",
+      "page_id": "p00008",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.15,
+        0.55,
+        0.85,
+        0.82
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_scanned/p00008_fig.webp",
+      "order": 46
+    },
+    {
+      "block_id": "p00008_b005",
+      "page_id": "p00008",
+      "type": "caption",
+      "text": "Fig. Reflex arc (scanned)",
+      "bbox": [
+        0.15,
+        0.83,
+        0.85,
+        0.86
+      ],
+      "level": null,
+      "confidence": 0.41,
+      "image_key": null,
+      "order": 47
+    },
+    {
+      "block_id": "p00008_b006",
+      "page_id": "p00008",
+      "type": "page_number",
+      "text": "8",
+      "bbox": [
+        0.46,
+        0.94,
+        0.54,
+        0.97
+      ],
+      "level": null,
+      "confidence": 0.9,
+      "image_key": null,
+      "order": 48
+    }
   ]
 }

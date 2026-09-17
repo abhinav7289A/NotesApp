@@ -1,33 +1,1141 @@
 {
   "schema_version": 1,
-  "chapter_id": "5954626e-0fac-4fe9-bbe1-ee8d054ee459",
-  "content_hash": "e449ec6d7bcb4ecbfc0d79508b18416ab1fc614963194fdfd0e0f2c740f7a6bc",
-  "title": "Biology XI, Chapter 5: Cell Structure and Function",
-  "source_filename": "biology-xi-ch5.pdf",
+  "chapter_id": "fa3e5d0d-33e1-5053-8823-8d919c7a112c",
+  "content_hash": "539b165c85f2eb376c897f0a84c8faceff28c3f87cc51aa08ae5663c7b7fc183",
+  "title": "Heredity and Evolution",
+  "source_filename": "chapter_twocolumn.pdf",
   "language": "en",
-  "page_count": 2,
+  "page_count": 6,
   "ocr_engine": "pdf-text-layer",
-  "created_at": "2026-09-05T11:00:00Z",
+  "created_at": "2026-09-14T10:00:00Z",
   "pages": [
-    { "page_id": "p00001", "index": 0, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true },
-    { "page_id": "p00002", "index": 1, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true }
+    {
+      "page_id": "p00001",
+      "index": 0,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00001.webp",
+      "has_text_layer": true
+    },
+    {
+      "page_id": "p00002",
+      "index": 1,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00002.webp",
+      "has_text_layer": true
+    },
+    {
+      "page_id": "p00003",
+      "index": 2,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00003.webp",
+      "has_text_layer": true
+    },
+    {
+      "page_id": "p00004",
+      "index": 3,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00004.webp",
+      "has_text_layer": true
+    },
+    {
+      "page_id": "p00005",
+      "index": 4,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00005.webp",
+      "has_text_layer": true
+    },
+    {
+      "page_id": "p00006",
+      "index": 5,
+      "width_pt": 595.0,
+      "height_pt": 842.0,
+      "rotation": 0,
+      "image_key": "pages/chapter_twocolumn/p00006.webp",
+      "has_text_layer": true
+    }
   ],
   "blocks": [
-    { "block_id": "p00001_b001", "page_id": "p00001", "type": "heading", "level": 1, "text": "Cell Structure and Function", "bbox": [0.08, 0.05, 0.92, 0.10], "order": 0, "confidence": null, "image_key": null },
-
-    { "block_id": "p00001_b002", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, first paragraph. Every living cell is enclosed by a plasma membrane that regulates the movement of substances between the cell and its surroundings, maintaining a stable internal environment.", "bbox": [0.53, 0.12, 0.92, 0.34], "order": 4, "confidence": null, "image_key": null },
-    { "block_id": "p00001_b003", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, second paragraph. Within eukaryotic cells, membrane-bound organelles such as the nucleus, mitochondria and endoplasmic reticulum divide the interior into compartments that each carry out specialised functions.", "bbox": [0.08, 0.12, 0.47, 0.30], "order": 1, "confidence": null, "image_key": null },
-    { "block_id": "p00001_b004", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Right column, second paragraph. Mitochondria generate most of the cell's usable chemical energy through aerobic respiration, and are unusual among organelles in carrying their own small circular genome.", "bbox": [0.53, 0.35, 0.92, 0.58], "order": 5, "confidence": null, "image_key": null },
-    { "block_id": "p00001_b005", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, third paragraph. The nucleus houses the cell's chromosomal DNA and is the site of transcription, separated from the cytoplasm by a double membrane perforated with nuclear pores.", "bbox": [0.08, 0.31, 0.47, 0.55], "order": 2, "confidence": null, "image_key": null },
-    { "block_id": "p00001_b006", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, fourth paragraph. The endoplasmic reticulum exists in rough and smooth forms, the former studded with ribosomes for protein synthesis and the latter involved in lipid synthesis and detoxification.", "bbox": [0.08, 0.56, 0.47, 0.80], "order": 3, "confidence": null, "image_key": null },
-    { "block_id": "p00001_b007", "page_id": "p00001", "type": "figure", "level": null, "text": null, "bbox": [0.53, 0.60, 0.92, 0.85], "order": 6, "confidence": null, "image_key": "figures/p00001_b007.webp" },
-
-    { "block_id": "p00002_b001", "page_id": "p00002", "type": "heading", "level": 2, "text": "The Cytoskeleton", "bbox": [0.08, 0.05, 0.92, 0.10], "order": 7, "confidence": null, "image_key": null },
-    { "block_id": "p00002_b002", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Left column, first paragraph. The cytoskeleton is a dynamic network of protein filaments that gives the cell its shape, anchors organelles in place, and drives internal transport and cell movement.", "bbox": [0.08, 0.12, 0.47, 0.34], "order": 8, "confidence": null, "image_key": null },
-    { "block_id": "p00002_b003", "page_id": "p00002", "type": "list_item", "level": null, "text": "(i) Microfilaments are the thinnest, built from actin, and are concentrated near the cell's periphery.", "bbox": [0.08, 0.36, 0.47, 0.42], "order": 9, "confidence": null, "image_key": null },
-    { "block_id": "p00002_b004", "page_id": "p00002", "type": "list_item", "level": null, "text": "(ii) Microtubules are the thickest, built from tubulin, and form the mitotic spindle during cell division.", "bbox": [0.08, 0.43, 0.47, 0.49], "order": 10, "confidence": null, "image_key": null },
-    { "block_id": "p00002_b005", "page_id": "p00002", "type": "figure", "level": null, "text": null, "bbox": [0.53, 0.12, 0.92, 0.40], "order": 11, "confidence": null, "image_key": "figures/p00002_b005.webp" },
-    { "block_id": "p00002_b006", "page_id": "p00002", "type": "caption", "level": null, "text": "Fig. 5.3 Organisation of microfilaments and microtubules within a generalised animal cell.", "bbox": [0.53, 0.41, 0.92, 0.46], "order": 12, "confidence": null, "image_key": null },
-    { "block_id": "p00002_b007", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Right column, second paragraph. Intermediate filaments provide mechanical strength and vary by cell type, from keratins in epithelial cells to neurofilaments in neurons.", "bbox": [0.53, 0.48, 0.92, 0.70], "order": 13, "confidence": null, "image_key": null }
+    {
+      "block_id": "p00001_b001",
+      "page_id": "p00001",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 1
+    },
+    {
+      "block_id": "p00001_b002",
+      "page_id": "p00001",
+      "type": "heading",
+      "text": "Heredity and Evolution",
+      "bbox": [
+        0.08,
+        0.07,
+        0.92,
+        0.11
+      ],
+      "level": 1,
+      "confidence": null,
+      "image_key": null,
+      "order": 2
+    },
+    {
+      "block_id": "p00001_b003",
+      "page_id": "p00001",
+      "type": "heading",
+      "text": "Section 1A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.13,
+        0.47,
+        0.16
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 3
+    },
+    {
+      "block_id": "p00001_b004",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[L1.1] All living organisms need energy to carry out the life processes that keep them alive. Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight.",
+      "bbox": [
+        0.08,
+        0.17,
+        0.47,
+        0.43
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 4
+    },
+    {
+      "block_id": "p00001_b005",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[L1.2] During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.08,
+        0.45,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 5
+    },
+    {
+      "block_id": "p00001_b006",
+      "page_id": "p00001",
+      "type": "heading",
+      "text": "Section 1B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.14,
+        0.92,
+        0.17
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 6
+    },
+    {
+      "block_id": "p00001_b007",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[R1.1] In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.53,
+        0.18,
+        0.92,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 7
+    },
+    {
+      "block_id": "p00001_b008",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[R1.2] Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction.",
+      "bbox": [
+        0.53,
+        0.4,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 8
+    },
+    {
+      "block_id": "p00001_b009",
+      "page_id": "p00001",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00001_fig.webp",
+      "order": 9
+    },
+    {
+      "block_id": "p00001_b010",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[L1.3] Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 10
+    },
+    {
+      "block_id": "p00001_b011",
+      "page_id": "p00001",
+      "type": "paragraph",
+      "text": "[R1.3] Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 11
+    },
+    {
+      "block_id": "p00001_b012",
+      "page_id": "p00001",
+      "type": "page_number",
+      "text": "1",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 12
+    },
+    {
+      "block_id": "p00002_b001",
+      "page_id": "p00002",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 13
+    },
+    {
+      "block_id": "p00002_b002",
+      "page_id": "p00002",
+      "type": "heading",
+      "text": "Section 2A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.08,
+        0.47,
+        0.11
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 14
+    },
+    {
+      "block_id": "p00002_b003",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[L2.1] Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction.",
+      "bbox": [
+        0.08,
+        0.12,
+        0.47,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 15
+    },
+    {
+      "block_id": "p00002_b004",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[L2.2] Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.08,
+        0.4,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 16
+    },
+    {
+      "block_id": "p00002_b005",
+      "page_id": "p00002",
+      "type": "heading",
+      "text": "Section 2B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.09,
+        0.92,
+        0.12
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 17
+    },
+    {
+      "block_id": "p00002_b006",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[R2.1] Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.53,
+        0.13,
+        0.92,
+        0.33
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 18
+    },
+    {
+      "block_id": "p00002_b007",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[R2.2] Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.53,
+        0.35,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 19
+    },
+    {
+      "block_id": "p00002_b008",
+      "page_id": "p00002",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00002_fig.webp",
+      "order": 20
+    },
+    {
+      "block_id": "p00002_b009",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[L2.3] During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 21
+    },
+    {
+      "block_id": "p00002_b010",
+      "page_id": "p00002",
+      "type": "paragraph",
+      "text": "[R2.3] Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 22
+    },
+    {
+      "block_id": "p00002_b011",
+      "page_id": "p00002",
+      "type": "page_number",
+      "text": "2",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 23
+    },
+    {
+      "block_id": "p00003_b001",
+      "page_id": "p00003",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 24
+    },
+    {
+      "block_id": "p00003_b002",
+      "page_id": "p00003",
+      "type": "heading",
+      "text": "Section 3A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.08,
+        0.47,
+        0.11
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 25
+    },
+    {
+      "block_id": "p00003_b003",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[L3.1] Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.08,
+        0.12,
+        0.47,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 26
+    },
+    {
+      "block_id": "p00003_b004",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[L3.2] Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.08,
+        0.4,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 27
+    },
+    {
+      "block_id": "p00003_b005",
+      "page_id": "p00003",
+      "type": "heading",
+      "text": "Section 3B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.09,
+        0.92,
+        0.12
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 28
+    },
+    {
+      "block_id": "p00003_b006",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[R3.1] Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues. All living organisms need energy to carry out the life processes that keep them alive.",
+      "bbox": [
+        0.53,
+        0.13,
+        0.92,
+        0.33
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 29
+    },
+    {
+      "block_id": "p00003_b007",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[R3.2] During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.53,
+        0.35,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 30
+    },
+    {
+      "block_id": "p00003_b008",
+      "page_id": "p00003",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00003_fig.webp",
+      "order": 31
+    },
+    {
+      "block_id": "p00003_b009",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[L3.3] Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 32
+    },
+    {
+      "block_id": "p00003_b010",
+      "page_id": "p00003",
+      "type": "paragraph",
+      "text": "[R3.3] In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 33
+    },
+    {
+      "block_id": "p00003_b011",
+      "page_id": "p00003",
+      "type": "page_number",
+      "text": "3",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 34
+    },
+    {
+      "block_id": "p00004_b001",
+      "page_id": "p00004",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 35
+    },
+    {
+      "block_id": "p00004_b002",
+      "page_id": "p00004",
+      "type": "heading",
+      "text": "Section 4A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.08,
+        0.47,
+        0.11
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 36
+    },
+    {
+      "block_id": "p00004_b003",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[L4.1] During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight. Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.08,
+        0.12,
+        0.47,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 37
+    },
+    {
+      "block_id": "p00004_b004",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[L4.2] In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.08,
+        0.4,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 38
+    },
+    {
+      "block_id": "p00004_b005",
+      "page_id": "p00004",
+      "type": "heading",
+      "text": "Section 4B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.09,
+        0.92,
+        0.12
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 39
+    },
+    {
+      "block_id": "p00004_b006",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[R4.1] Transportation in plants happens through xylem and phloem tissues. All living organisms need energy to carry out the life processes that keep them alive. Nutrition is the process of taking in food and using it to obtain energy and build the body.",
+      "bbox": [
+        0.53,
+        0.13,
+        0.92,
+        0.33
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 40
+    },
+    {
+      "block_id": "p00004_b007",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[R4.2] Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.53,
+        0.35,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 41
+    },
+    {
+      "block_id": "p00004_b008",
+      "page_id": "p00004",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00004_fig.webp",
+      "order": 42
+    },
+    {
+      "block_id": "p00004_b009",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[L4.3] Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 43
+    },
+    {
+      "block_id": "p00004_b010",
+      "page_id": "p00004",
+      "type": "paragraph",
+      "text": "[R4.3] Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 44
+    },
+    {
+      "block_id": "p00004_b011",
+      "page_id": "p00004",
+      "type": "page_number",
+      "text": "4",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 45
+    },
+    {
+      "block_id": "p00005_b001",
+      "page_id": "p00005",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 46
+    },
+    {
+      "block_id": "p00005_b002",
+      "page_id": "p00005",
+      "type": "heading",
+      "text": "Section 5A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.08,
+        0.47,
+        0.11
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 47
+    },
+    {
+      "block_id": "p00005_b003",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[L5.1] Chlorophyll in the chloroplasts absorbs light energy needed for this reaction. Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.08,
+        0.12,
+        0.47,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 48
+    },
+    {
+      "block_id": "p00005_b004",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[L5.2] Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.08,
+        0.4,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 49
+    },
+    {
+      "block_id": "p00005_b005",
+      "page_id": "p00005",
+      "type": "heading",
+      "text": "Section 5B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.09,
+        0.92,
+        0.12
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 50
+    },
+    {
+      "block_id": "p00005_b006",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[R5.1] All living organisms need energy to carry out the life processes that keep them alive. Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis.",
+      "bbox": [
+        0.53,
+        0.13,
+        0.92,
+        0.33
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 51
+    },
+    {
+      "block_id": "p00005_b007",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[R5.2] Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.53,
+        0.35,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 52
+    },
+    {
+      "block_id": "p00005_b008",
+      "page_id": "p00005",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00005_fig.webp",
+      "order": 53
+    },
+    {
+      "block_id": "p00005_b009",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[L5.3] In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 54
+    },
+    {
+      "block_id": "p00005_b010",
+      "page_id": "p00005",
+      "type": "paragraph",
+      "text": "[R5.3] Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 55
+    },
+    {
+      "block_id": "p00005_b011",
+      "page_id": "p00005",
+      "type": "page_number",
+      "text": "5",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 56
+    },
+    {
+      "block_id": "p00006_b001",
+      "page_id": "p00006",
+      "type": "header",
+      "text": "Journal of School Science",
+      "bbox": [
+        0.1,
+        0.03,
+        0.9,
+        0.05
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 57
+    },
+    {
+      "block_id": "p00006_b002",
+      "page_id": "p00006",
+      "type": "heading",
+      "text": "Section 6A (left column, read first)",
+      "bbox": [
+        0.08,
+        0.08,
+        0.47,
+        0.11
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 58
+    },
+    {
+      "block_id": "p00006_b003",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[L6.1] Heterotrophs depend directly or indirectly on autotrophs for their food. In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.08,
+        0.12,
+        0.47,
+        0.38
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 59
+    },
+    {
+      "block_id": "p00006_b004",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[L6.2] Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues. All living organisms need energy to carry out the life processes that keep them alive.",
+      "bbox": [
+        0.08,
+        0.4,
+        0.47,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 60
+    },
+    {
+      "block_id": "p00006_b005",
+      "page_id": "p00006",
+      "type": "heading",
+      "text": "Section 6B (right column, read second)",
+      "bbox": [
+        0.53,
+        0.09,
+        0.92,
+        0.12
+      ],
+      "level": 2,
+      "confidence": null,
+      "image_key": null,
+      "order": 61
+    },
+    {
+      "block_id": "p00006_b006",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[R6.1] Nutrition is the process of taking in food and using it to obtain energy and build the body. Autotrophs such as green plants make their own food through photosynthesis. During photosynthesis, carbon dioxide and water are converted into carbohydrates using sunlight.",
+      "bbox": [
+        0.53,
+        0.13,
+        0.92,
+        0.33
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 62
+    },
+    {
+      "block_id": "p00006_b007",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[R6.2] In human beings, digestion begins in the mouth where saliva breaks down starch. Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy. Transportation in plants happens through xylem and phloem tissues.",
+      "bbox": [
+        0.53,
+        0.35,
+        0.92,
+        0.58
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 63
+    },
+    {
+      "block_id": "p00006_b008",
+      "page_id": "p00006",
+      "type": "figure",
+      "text": null,
+      "bbox": [
+        0.1,
+        0.61,
+        0.9,
+        0.78
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": "figures/chapter_twocolumn/p00006_fig.webp",
+      "order": 64
+    },
+    {
+      "block_id": "p00006_b009",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[L6.3] Respiration releases the energy stored in food so that cells can use it. Aerobic respiration uses oxygen and produces carbon dioxide, water and energy.",
+      "bbox": [
+        0.08,
+        0.81,
+        0.47,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 65
+    },
+    {
+      "block_id": "p00006_b010",
+      "page_id": "p00006",
+      "type": "paragraph",
+      "text": "[R6.3] Transportation in plants happens through xylem and phloem tissues. All living organisms need energy to carry out the life processes that keep them alive.",
+      "bbox": [
+        0.53,
+        0.8,
+        0.92,
+        0.92
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 66
+    },
+    {
+      "block_id": "p00006_b011",
+      "page_id": "p00006",
+      "type": "page_number",
+      "text": "6",
+      "bbox": [
+        0.47,
+        0.95,
+        0.53,
+        0.97
+      ],
+      "level": null,
+      "confidence": null,
+      "image_key": null,
+      "order": 67
+    }
   ]
 }
