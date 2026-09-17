@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "chapter_id": "5954626e-0fac-4fe9-bbe1-ee8d054ee459",
+  "content_hash": "e449ec6d7bcb4ecbfc0d79508b18416ab1fc614963194fdfd0e0f2c740f7a6bc",
+  "title": "Biology XI, Chapter 5: Cell Structure and Function",
+  "source_filename": "biology-xi-ch5.pdf",
+  "language": "en",
+  "page_count": 2,
+  "ocr_engine": "pdf-text-layer",
+  "created_at": "2026-09-05T11:00:00Z",
+  "pages": [
+    { "page_id": "p00001", "index": 0, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true },
+    { "page_id": "p00002", "index": 1, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true }
+  ],
+  "blocks": [
+    { "block_id": "p00001_b001", "page_id": "p00001", "type": "heading", "level": 1, "text": "Cell Structure and Function", "bbox": [0.08, 0.05, 0.92, 0.10], "order": 0, "confidence": null, "image_key": null },
+
+    { "block_id": "p00001_b002", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, first paragraph. Every living cell is enclosed by a plasma membrane that regulates the movement of substances between the cell and its surroundings, maintaining a stable internal environment.", "bbox": [0.53, 0.12, 0.92, 0.34], "order": 4, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b003", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, second paragraph. Within eukaryotic cells, membrane-bound organelles such as the nucleus, mitochondria and endoplasmic reticulum divide the interior into compartments that each carry out specialised functions.", "bbox": [0.08, 0.12, 0.47, 0.30], "order": 1, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b004", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Right column, second paragraph. Mitochondria generate most of the cell's usable chemical energy through aerobic respiration, and are unusual among organelles in carrying their own small circular genome.", "bbox": [0.53, 0.35, 0.92, 0.58], "order": 5, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b005", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, third paragraph. The nucleus houses the cell's chromosomal DNA and is the site of transcription, separated from the cytoplasm by a double membrane perforated with nuclear pores.", "bbox": [0.08, 0.31, 0.47, 0.55], "order": 2, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b006", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Left column, fourth paragraph. The endoplasmic reticulum exists in rough and smooth forms, the former studded with ribosomes for protein synthesis and the latter involved in lipid synthesis and detoxification.", "bbox": [0.08, 0.56, 0.47, 0.80], "order": 3, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b007", "page_id": "p00001", "type": "figure", "level": null, "text": null, "bbox": [0.53, 0.60, 0.92, 0.85], "order": 6, "confidence": null, "image_key": "figures/p00001_b007.webp" },
+
+    { "block_id": "p00002_b001", "page_id": "p00002", "type": "heading", "level": 2, "text": "The Cytoskeleton", "bbox": [0.08, 0.05, 0.92, 0.10], "order": 7, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b002", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Left column, first paragraph. The cytoskeleton is a dynamic network of protein filaments that gives the cell its shape, anchors organelles in place, and drives internal transport and cell movement.", "bbox": [0.08, 0.12, 0.47, 0.34], "order": 8, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b003", "page_id": "p00002", "type": "list_item", "level": null, "text": "(i) Microfilaments are the thinnest, built from actin, and are concentrated near the cell's periphery.", "bbox": [0.08, 0.36, 0.47, 0.42], "order": 9, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b004", "page_id": "p00002", "type": "list_item", "level": null, "text": "(ii) Microtubules are the thickest, built from tubulin, and form the mitotic spindle during cell division.", "bbox": [0.08, 0.43, 0.47, 0.49], "order": 10, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b005", "page_id": "p00002", "type": "figure", "level": null, "text": null, "bbox": [0.53, 0.12, 0.92, 0.40], "order": 11, "confidence": null, "image_key": "figures/p00002_b005.webp" },
+    { "block_id": "p00002_b006", "page_id": "p00002", "type": "caption", "level": null, "text": "Fig. 5.3 Organisation of microfilaments and microtubules within a generalised animal cell.", "bbox": [0.53, 0.41, 0.92, 0.46], "order": 12, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b007", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Right column, second paragraph. Intermediate filaments provide mechanical strength and vary by cell type, from keratins in epithelial cells to neurofilaments in neurons.", "bbox": [0.53, 0.48, 0.92, 0.70], "order": 13, "confidence": null, "image_key": null }
+  ]
+}

@@ -1,0 +1,61 @@
+name: marginalia
+description: "Marginalia — AI study notebook (mobile). P1: reader and selection."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # PDF rendering (Pdfium-backed, page virtualization built in)
+  pdfrx: ^2.6.1
+
+  # Local cache of canonical chapter JSON (offline reading)
+  drift: ^2.28.2
+  drift_flutter: ^0.3.1
+  sqlite3_flutter_libs: ^0.6.0+eol
+  path_provider: ^2.1.5
+  path: ^1.9.1
+
+  # HTTP client — real API calls once contracts/openapi.json exists.
+  # See lib/data/document_api.dart for why this isn't wired to a generated
+  # client yet.
+  dio: ^5.7.0
+
+  # Typed models
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.12.0
+
+  # IBM Plex Serif/Sans/Mono per design_handoff_marginalia/README.md.
+  # TODO(design): self-host these instead of fetching from Google Fonts at
+  # runtime before shipping, per the handoff doc's "Assets" section.
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  build_runner: ^2.16.1
+  freezed: ^4.0.1
+  json_serializable: ^6.14.1
+  drift_dev: ^2.28.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fixtures/chapter_clean.json
+    - assets/fixtures/chapter_clean.pdf
+    - assets/fixtures/chapter_scanned.json
+    - assets/fixtures/chapter_scanned.pdf
+    - assets/fixtures/chapter_twocolumn.json
+    - assets/fixtures/chapter_twocolumn.pdf

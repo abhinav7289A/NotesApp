@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "chapter_id": "38acddfb-be43-46cf-b3c8-d74d23399c14",
+  "content_hash": "bdad6496daf2954ba7e295ddbea0c3e0e747e466f0bd52fa7a2eb8eab164a91f",
+  "title": "Physics XII, Chapter 9: Ray Optics",
+  "source_filename": "physics-xii-ch9.pdf",
+  "language": "en",
+  "page_count": 3,
+  "ocr_engine": "pdf-text-layer",
+  "created_at": "2026-09-01T09:00:00Z",
+  "pages": [
+    { "page_id": "p00001", "index": 0, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true },
+    { "page_id": "p00002", "index": 1, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true },
+    { "page_id": "p00003", "index": 2, "width_pt": 595.28, "height_pt": 841.89, "rotation": 0, "image_key": null, "has_text_layer": true }
+  ],
+  "blocks": [
+    { "block_id": "p00001_b001", "page_id": "p00001", "type": "heading", "level": 1, "text": "Ray Optics", "bbox": [0.08, 0.06, 0.92, 0.12], "order": 0, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b002", "page_id": "p00001", "type": "paragraph", "level": null, "text": "When a ray of light passes from one transparent medium into another of different optical density, it bends at the interface. This bending, called refraction, follows a precise relationship between the angle of incidence and the angle of refraction known as Snell's law.", "bbox": [0.08, 0.14, 0.92, 0.30], "order": 1, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b003", "page_id": "p00001", "type": "paragraph", "level": null, "text": "The refractive index of a medium is a measure of how much it slows light relative to a vacuum. Denser media, such as glass or water, have higher refractive indices than air and bend light more sharply toward the normal.", "bbox": [0.08, 0.31, 0.92, 0.47], "order": 2, "confidence": null, "image_key": null },
+    { "block_id": "p00001_b004", "page_id": "p00001", "type": "figure", "level": null, "text": null, "bbox": [0.15, 0.50, 0.85, 0.75], "order": 3, "confidence": null, "image_key": "figures/p00001_b004.webp" },
+    { "block_id": "p00001_b005", "page_id": "p00001", "type": "caption", "level": null, "text": "Fig. 9.1 Refraction of light through a rectangular glass slab.", "bbox": [0.15, 0.76, 0.85, 0.80], "order": 4, "confidence": null, "image_key": null },
+
+    { "block_id": "p00002_b001", "page_id": "p00002", "type": "heading", "level": 2, "text": "Refraction Through a Prism", "bbox": [0.08, 0.06, 0.92, 0.11], "order": 5, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b002", "page_id": "p00002", "type": "paragraph", "level": null, "text": "A triangular prism refracts light twice, once entering and once leaving, so the emergent ray is deviated from its original path by an angle that depends on the prism angle and the refractive index of the glass.", "bbox": [0.08, 0.12, 0.92, 0.28], "order": 6, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b003", "page_id": "p00002", "type": "list_item", "level": null, "text": "(i) The angle of incidence and the angle of emergence are both measured from the normal at each face.", "bbox": [0.10, 0.30, 0.90, 0.35], "order": 7, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b004", "page_id": "p00002", "type": "list_item", "level": null, "text": "(ii) The angle of deviation depends on the prism angle A and the refractive index n of the material.", "bbox": [0.10, 0.36, 0.90, 0.41], "order": 8, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b005", "page_id": "p00002", "type": "list_item", "level": null, "text": "(iii) Minimum deviation occurs when the ray passes symmetrically through the prism.", "bbox": [0.10, 0.42, 0.90, 0.47], "order": 9, "confidence": null, "image_key": null },
+    { "block_id": "p00002_b006", "page_id": "p00002", "type": "paragraph", "level": null, "text": "At minimum deviation, the refractive index of the prism material can be calculated directly from the prism angle and the measured deviation angle, which is how prism spectrometers are calibrated.", "bbox": [0.08, 0.49, 0.92, 0.70], "order": 10, "confidence": null, "image_key": null },
+
+    { "block_id": "p00003_b001", "page_id": "p00003", "type": "heading", "level": 2, "text": "Total Internal Reflection", "bbox": [0.08, 0.06, 0.92, 0.11], "order": 11, "confidence": null, "image_key": null },
+    { "block_id": "p00003_b002", "page_id": "p00003", "type": "paragraph", "level": null, "text": "When light travels from a denser medium into a rarer one at an angle greater than the critical angle, it is not transmitted at all. Instead, the interface behaves like a perfect mirror, a phenomenon called total internal reflection.", "bbox": [0.08, 0.12, 0.92, 0.30], "order": 12, "confidence": null, "image_key": null },
+    { "block_id": "p00003_b003", "page_id": "p00003", "type": "figure", "level": null, "text": null, "bbox": [0.20, 0.33, 0.80, 0.58], "order": 13, "confidence": null, "image_key": "figures/p00003_b003.webp" },
+    { "block_id": "p00003_b004", "page_id": "p00003", "type": "caption", "level": null, "text": "Fig. 9.2 Total internal reflection at a glass-air interface when the angle of incidence exceeds the critical angle.", "bbox": [0.15, 0.59, 0.85, 0.63], "order": 14, "confidence": null, "image_key": null },
+    { "block_id": "p00003_b005", "page_id": "p00003", "type": "paragraph", "level": null, "text": "This effect is the basis of optical fibres, which guide light along their length through thousands of successive total internal reflections with almost no loss of intensity.", "bbox": [0.08, 0.65, 0.92, 0.85], "order": 15, "confidence": null, "image_key": null }
+  ]
+}

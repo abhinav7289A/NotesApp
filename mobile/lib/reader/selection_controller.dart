@@ -1,0 +1,131 @@
+import 'package:flutter/widgets.dart';
+
+import '../models/canonical_chapter.dart';
+import '../models/selection_state.dart';
+import 'coordinate_conversion.dart';
+
+/// Drives drag-to-select over the reader's page overlays and produces a
+/// [SelectionState] per `P1-mobile-CLAUDE.md`'s "Selection behaviour".
+///
+/// **P1 simplification, documented deliberately rather than hidden:** the
+/// canonical schema (`contracts/canonical_chapter.schema.json`) only carries
+/// block-level `bbox`, not per-word or per-line geometry. So selection here
+/// is **block-level** — dragging a marquee across the page selects whole
+/// blocks whose bbox intersects the drag, and the highlight in
+/// `bbox_overlay.dart` draws one rect per selected block rather than true
+/// per-line rects. Real word-snap / per-line highlighting needs either (a)
+/// pdfrx's own text-layer hit-testing wired in, which would compute
+/// selection independently of the canonical schema, or (b) extending the
+/// schema with line geometry — both are contract-level decisions for a
+/// later phase, not something to bolt on unilaterally here.
+///
+/// Every page overlay calls [registerPageLayout] on each build (layouts
+/// change with scroll/zoom) so a drag that crosses a page boundary can
+/// still be resolved against every currently-visible page, not just the one
+/// the gesture started on — see the class-level note in `reader_screen.dart`
+/// for why plain widget-local gesture handling isn't enough for that.
+class SelectionController extends ChangeNotifier {
+  SelectionController(this._chapter);
+
+  CanonicalChapter _chapter;
+  final Map<String, PageLayout> _pageLayouts = {};
+
+  Offset? _dragStart;
+  Offset? _dragCurrent;
+  SelectionState? _selection;
+
+  SelectionState? get selection => _selection;
+  bool get isActive => _selection != null;
+
+  void updateChapter(CanonicalChapter chapter) {
+    _chapter = chapter;
+  }
+
+  /// Called from `pageOverlaysBuilder` for every visible page, every build.
+  /// [pageRect] must be on-screen, logical-pixel coordinates (what pdfrx
+  /// hands the builder) — see `coordinate_conversion.dart`.
+  void registerPageLayout(String pageId, PageLayout layout) {
+    _pageLayouts[pageId] = layout;
+  }
+
+  void startDrag(String originPageId, Offset localPosition) {
+    final origin = _pageLayouts[originPageId];
+    if (origin == null) return;
+    _dragStart = origin.pageRect.topLeft + localPosition;
+    _dragCurrent = _dragStart;
+    _recompute();
+  }
+
+  void updateDrag(String originPageId, Offset localPosition) {
+    final origin = _pageLayouts[originPageId];
+    if (origin == null || _dragStart == null) return;
+    _dragCurrent = origin.pageRect.topLeft + localPosition;
+    _recompute();
+  }
+
+  void endDrag() {
+    _dragStart = null;
+    _dragCurrent = null;
+    // _selection is left as the finalized result of the drag.
+  }
+
+  void clear() {
+    if (_selection == null && _dragStart == null) return;
+    _selection = null;
+    _dragStart = null;
+    _dragCurrent = null;
+    notifyListeners();
+  }
+
+  void _recompute() {
+    final start = _dragStart;
+    final current = _dragCurrent;
+    if (start == null || current == null) return;
+    final dragRect = Rect.fromPoints(start, current);
+
+    final touched = <ChapterBlock>[];
+    for (final entry in _pageLayouts.entries) {
+      final layout = entry.value;
+      if (!dragRect.overlaps(layout.pageRect)) continue;
+      for (final block in _chapter.blocksByPage[entry.key] ?? const <ChapterBlock>[]) {
+        if (block.type == BlockType.header ||
+            block.type == BlockType.footer ||
+            block.type == BlockType.pageNumber) {
+          continue; // chrome-ish blocks are never selectable
+        }
+        final blockRect = toScreen(block.bbox, layout);
+        if (blockRect.overlaps(dragRect)) {
+          touched.add(block);
+        }
+      }
+    }
+
+    if (touched.isEmpty) {
+      _selection = null;
+      notifyListeners();
+      return;
+    }
+
+    touched.sort((a, b) => a.order.compareTo(b.order));
+
+    var anchor = toScreen(touched.first.bbox, _pageLayouts[touched.first.pageId]!);
+    for (final b in touched.skip(1)) {
+      anchor = anchor.expandToInclude(toScreen(b.bbox, _pageLayouts[b.pageId]!));
+    }
+
+    _selection = SelectionState(
+      text: touched.map((b) => b.text ?? '').where((t) => t.isNotEmpty).join(' '),
+      blockIds: touched.map((b) => b.blockId).toList(growable: false),
+      pageIds: touched.map((b) => b.pageId).toSet().toList(growable: false),
+      anchorRect: anchor,
+    );
+    notifyListeners();
+  }
+
+  /// Selected block ids on [pageId], for the highlight painter.
+  Set<String> selectedBlockIdsOn(String pageId) {
+    final sel = _selection;
+    if (sel == null) return const {};
+    return sel.blockIds.where((id) => id.startsWith('${pageId}_')).toSet();
+  }
+}

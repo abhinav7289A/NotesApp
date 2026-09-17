@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "chapter_id": "39f98b22-13fe-414e-a123-8bbc71d4118f",
+  "content_hash": "678986f4a775d1a9412e297b87d9c6d3d9a7d56d585939bd2d36eb51414b1958",
+  "title": "History VIII, Chapter 4: The Mughal Empire",
+  "source_filename": "history-viii-ch4-scan.pdf",
+  "language": "en",
+  "page_count": 2,
+  "ocr_engine": "surya-0.6",
+  "created_at": "2026-09-03T14:20:00Z",
+  "pages": [
+    { "page_id": "p00001", "index": 0, "width_pt": 419.53, "height_pt": 595.28, "rotation": 0, "image_key": "pages/p00001.webp", "has_text_layer": false },
+    { "page_id": "p00002", "index": 1, "width_pt": 419.53, "height_pt": 595.28, "rotation": 0, "image_key": "pages/p00002.webp", "has_text_layer": false }
+  ],
+  "blocks": [
+    { "block_id": "p00001_b001", "page_id": "p00001", "type": "heading", "level": 1, "text": "The Mughal Empire", "bbox": [0.09, 0.05, 0.91, 0.11], "order": 0, "confidence": 0.93, "image_key": null },
+    { "block_id": "p00001_b002", "page_id": "p00001", "type": "paragraph", "level": null, "text": "Babur, a descendant of both Timur and Genghis Khan, crossed into the Indian subcontinent from Central Asia and defeated the Sultan of Delhi at the first battle of Panipat in 1526, founding the dynasty that would rule much of the subcontinent for over three centuries.", "bbox": [0.08, 0.13, 0.92, 0.32], "order": 1, "confidence": 0.87, "image_key": null },
+    { "block_id": "p00001_b003", "page_id": "p00001", "type": "paragraph", "level": null, "text": "His grandson Akbar expanded the empire through a combination of military conquest and marriage alliances, and introduced administrative reforms that brought Hindu and Muslim nobility into a shared system of governance.", "bbox": [0.08, 0.33, 0.92, 0.52], "order": 2, "confidence": 0.81, "image_key": null },
+    { "block_id": "p00001_b004", "page_id": "p00001", "type": "figure", "level": null, "text": null, "bbox": [0.18, 0.55, 0.82, 0.80], "order": 3, "confidence": null, "image_key": "figures/p00001_b004.webp" },
+    { "block_id": "p00001_b005", "page_id": "p00001", "type": "caption", "level": null, "text": "A miniature painting depicting the court of Akbar at Fatehpur Sikri.", "bbox": [0.15, 0.81, 0.85, 0.85], "order": 4, "confidence": 0.76, "image_key": null },
+
+    { "block_id": "p00002_b001", "page_id": "p00002", "type": "heading", "level": 2, "text": "Architecture and Administration", "bbox": [0.08, 0.06, 0.92, 0.11], "order": 5, "confidence": 0.90, "image_key": null },
+    { "block_id": "p00002_b002", "page_id": "p00002", "type": "paragraph", "level": null, "text": "Mughal architecture blended Persian, Central Asian and indigenous Indian styles, producing monuments such as Humayun's Tomb and, later, the Taj Mahal under Shah Jahan.", "bbox": [0.08, 0.12, 0.92, 0.28], "order": 6, "confidence": 0.88, "image_key": null },
+    { "block_id": "p00002_b003", "page_id": "p00002", "type": "list_item", "level": null, "text": "(a) The mansabdari system ranked nobles by military and administrative obligation.", "bbox": [0.10, 0.30, 0.90, 0.35], "order": 7, "confidence": 0.91, "image_key": null },
+    { "block_id": "p00002_b004", "page_id": "p00002", "type": "list_item", "level": null, "text": "(b) Land revenue was assessed and collected through a standardised measurement system.", "bbox": [0.10, 0.36, 0.90, 0.41], "order": 8, "confidence": 0.89, "image_key": null },
+    { "block_id": "p00002_b005", "page_id": "p00002", "type": "paragraph", "level": null, "text": "By the early eighteenth century, weakened central authority, costly wars in the Deccan and the rise of regional powers had eroded the empire's control far beyond its heartland, a passage of the scan too faint to read with full confidence.", "bbox": [0.08, 0.43, 0.92, 0.70], "order": 9, "confidence": 0.69, "image_key": null }
+  ]
+}
