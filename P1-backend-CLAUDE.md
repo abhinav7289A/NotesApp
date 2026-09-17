@@ -62,7 +62,7 @@ POST   /v1/documents                 → {document_id, upload_url}
 POST   /v1/documents/{id}/ingest     → {job_id}          enqueues
 GET    /v1/documents/{id}            → {status, progress, page_count, error}
 GET    /v1/documents/{id}/chapter    → CanonicalChapter
-GET    /v1/pages/{page_id}/image     → 302 to signed R2 URL
+GET    /v1/chapters/{chapter_id}/pages/{page_id}/image  → 302 to signed R2 URL   (page_id alone is not unique)
 GET    /v1/documents                 → list for the library screen
 ```
 
@@ -103,7 +103,7 @@ documents(id, user_id, filename, content_hash, status, progress,
           page_count, error_code, created_at)
 chapters(id, content_hash UNIQUE, schema_version, title, language,
          payload JSONB, ocr_engine, created_at)
-pages(page_id PK, chapter_id, index, width_pt, height_pt, image_key)
+pages(chapter_id, page_id, PK(chapter_id, page_id), index, width_pt, height_pt, image_key)
 jobs(id, document_id, type, state, attempts, last_error, created_at)
 ```
 
