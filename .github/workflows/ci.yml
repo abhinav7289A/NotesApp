@@ -7,28 +7,38 @@ on:
 jobs:
   backend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12", cache: pip }
-      - run: pip install -r backend/requirements.txt -r backend/requirements-dev.txt
-      - run: ruff check backend/
-      - run: mypy backend/app
-      - run: pytest backend/tests -q
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: ruff check .
+      - run: mypy app
+      - run: pytest tests -q
 
   mobile:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: check
+        run: echo "exists=$([ -f mobile/pubspec.yaml ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
       - uses: subosito/flutter-action@v2
+        if: steps.check.outputs.exists == 'true'
         with: { channel: stable, cache: true }
       - run: flutter pub get
+        if: steps.check.outputs.exists == 'true'
         working-directory: mobile
       - run: dart run build_runner build --delete-conflicting-outputs
+        if: steps.check.outputs.exists == 'true'
         working-directory: mobile
       - run: dart analyze
+        if: steps.check.outputs.exists == 'true'
         working-directory: mobile
       - run: flutter test
+        if: steps.check.outputs.exists == 'true'
         working-directory: mobile
 
   contract-drift:
